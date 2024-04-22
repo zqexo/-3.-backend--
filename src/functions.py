@@ -1,4 +1,3 @@
-import json
 from datetime import datetime
 
 
@@ -33,7 +32,7 @@ def format_transaction(transaction):
 
 def get_last_executed_transactions(data, count=5):
     """
-    Код для сортировки и вывода последних 5-ти операций
+    Код для сортировки и возврата последних 5-ти операций
     """
     transactions = []
     executed_operations = [op for op in data if op.get('state') == 'EXECUTED']
@@ -47,4 +46,4 @@ def get_last_executed_transactions(data, count=5):
         transactions.append('\n')  # Пустая строка между операциями
 
     # Вывод списка операций с разделением пустой строкой
-    print('\n'.join(transactions))
+    return '\n'.join(transactions)
